@@ -1,0 +1,80 @@
+#created by template
+path=C:\Windows;C:\Windows\system32;C:\PAXPAY~1\build\gcc-sde\bin
+
+NAME      = temp
+VERSION   = "v1.17"
+GCCDIR    = C:\PAXPAY~1\build\gcc-sde
+GCCBIN    = $(GCCDIR)\bin
+GCCLIB    = $(GCCDIR)\lib
+LOCSRC    = C:\PAXPAY~1\myapp\temp
+LOCOBJ    = C:\PAXPAY~1\myapp\temp\.\obj_d210
+LOCINC    =  -I. -IC:\PAXPAY~1\include
+POSLIBDIR = C:\PAXPAY~1\postype\D210
+POSLIB    = d210api
+
+ASM       = $(GCCBIN)\sde-gcc -xassembler-with-cpp -mtune=4ksd -mips32r2 -msmartmips -c -D_32_ -D_ASSEMBLER_ -EL
+GCC       = $(GCCBIN)\sde-gcc -mtune=4ksd -mips32r2 -c -D_32_  -EL -O1 -ffixed-14 -ffixed-15 -G0 -fomit-frame-pointer -Wimplicit -Wformat -ffreestanding -mlong-calls -gdwarf-2 -D_POS_D210 $(LOCINC) 
+LINK      = $(GCCBIN)\sde-ld -EL --allow-multiple-definition -T$(POSLIBDIR)\sldscript_d210 -L$(GCCLIB) -L$(POSLIBDIR) -L$(LOCOBJ)  --allow-multiple-definition
+OBJ    = $(LOCOBJ)\init.o \
+		          $(LOCOBJ)\appLib.o \
+         $(LOCOBJ)\FileOper.o \
+         $(LOCOBJ)\lng.o \
+         $(LOCOBJ)\Logo.o \
+         $(LOCOBJ)\main.o \
+         $(LOCOBJ)\setup.o \
+         $(LOCOBJ)\sslcomm.o \
+         $(LOCOBJ)\SxxCom.o \
+         $(LOCOBJ)\TranProc.o \
+         $(LOCOBJ)\util.o \
+         $(LOCOBJ)\Vtef.o \
+         $(LOCOBJ)\Wifi.o \
+         $(LOCOBJ)\XMLPAR~1.o \
+         $(LOCOBJ)\xmlProc.o
+
+#  ADS-ROM version
+$(NAME).elf: $(OBJ) _makefile_
+    $(LINK) -o $(LOCOBJ)\$(NAME).elf $(OBJ)  "C:\PAXPAY~1\myapp\pax_me\lib\Dxx\LIBMNG~1.A" "C:\PAXPAY~1\myapp\pax_me\lib\Dxx\LIBCLE~1.A" "C:\PAXPAY~1\myapp\pax_me\lib\Dxx\LIBCLA~1.A" "C:\PAXPAY~1\myapp\pax_me\lib\Dxx\LIBCLM~1.A" "C:\PAXPAY~1\myapp\pax_me\lib\Dxx\LIBCLW~1.A" "C:\PAXPAY~1\myapp\pax_me\lib\Dxx\LIBEMV~1.A" "C:\PAXPAY~1\myapp\pax_me\lib\Dxx\libImage.a" "C:\PAXPAY~1\myapp\pax_me\lib\Dxx\gzip_dxx.a" "C:\PAXPAY~1\myapp\pax_me\lib\Dxx\LIBSSL~1.A" "C:\PAXPAY~1\myapp\pax_me\lib\Dxx\LIBCRY~1.A"  -l$(POSLIB)  -lpaxlibc
+    sde-conv -f bin -v -o $(LOCOBJ)\$(NAME)($(VERSION)).bin $(LOCOBJ)\$(NAME).elf 
+	
+	sde-objdump -D -S $(LOCOBJ)\$(NAME).elf > $(LOCOBJ)\$(NAME).dasm
+
+# ASM file
+$(LOCOBJ)\init.o: $(POSLIBDIR)\init_d210.s
+        $(ASM) $(POSLIBDIR)\init_d210.s -o $(LOCOBJ)\init.o
+
+#  C files
+$(LOCOBJ)\appLib.o: "appLib.c"
+        $(GCC) "appLib.c" -o $(LOCOBJ)\appLib.o
+$(LOCOBJ)\FileOper.o: "FileOper.c"
+        $(GCC) "FileOper.c" -o $(LOCOBJ)\FileOper.o
+$(LOCOBJ)\lng.o: "lng.c"
+        $(GCC) "lng.c" -o $(LOCOBJ)\lng.o
+$(LOCOBJ)\Logo.o: "Logo.c"
+        $(GCC) "Logo.c" -o $(LOCOBJ)\Logo.o
+$(LOCOBJ)\main.o: "main.c"
+        $(GCC) "main.c" -o $(LOCOBJ)\main.o
+$(LOCOBJ)\setup.o: "setup.c"
+        $(GCC) "setup.c" -o $(LOCOBJ)\setup.o
+$(LOCOBJ)\sslcomm.o: "sslcomm.c"
+        $(GCC) "sslcomm.c" -o $(LOCOBJ)\sslcomm.o
+$(LOCOBJ)\SxxCom.o: "SxxCom.c"
+        $(GCC) "SxxCom.c" -o $(LOCOBJ)\SxxCom.o
+$(LOCOBJ)\TranProc.o: "TranProc.c"
+        $(GCC) "TranProc.c" -o $(LOCOBJ)\TranProc.o
+$(LOCOBJ)\util.o: "util.c"
+        $(GCC) "util.c" -o $(LOCOBJ)\util.o
+$(LOCOBJ)\Vtef.o: "Vtef.c"
+        $(GCC) "Vtef.c" -o $(LOCOBJ)\Vtef.o
+$(LOCOBJ)\Wifi.o: "Wifi.c"
+        $(GCC) "Wifi.c" -o $(LOCOBJ)\Wifi.o
+$(LOCOBJ)\XMLPAR~1.o: "XMLPAR~1.c"
+        $(GCC) "XMLPAR~1.c" -o $(LOCOBJ)\XMLPAR~1.o
+$(LOCOBJ)\xmlProc.o: "xmlProc.c"
+        $(GCC) "xmlProc.c" -o $(LOCOBJ)\xmlProc.o
+
+		
+clean:
+	del *.db
+	del *.blk
+	del *.db2
+	del *.out

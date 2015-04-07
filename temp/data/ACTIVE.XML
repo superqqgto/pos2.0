@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<mensagem>
+  <header></header>
+  <dados>
+    <form>
+      <idtela>TelaOpcoes</idtela>
+      <descricao>Tela de opções do POS 2.0</descricao>
+      <versao>1.00</versao>
+      <data>22/07/2012</data>
+
+      <componentes>
+        <picturebox  id="picturebox"        posx="0"   posy="0"   comprimento="100"    altura="30"   imagem="Cielo.png"     ></picturebox>
+        <label       id="lblOpcoes"         posx="50"  posy="50"  fontsize="12" comprimento="400"  alinhamento="MiddleCenter" >Opções:</label>
+        <listbox     id="lstOpcoes"     posx="50"  posy="75"  fontsize="16" comprimento="400"  altura="9999">
+          <opcao valor="01" setflag="ATIVACAO">ATIVAÇÃO POS 2.0</opcao>
+        </listbox>
+      </componentes>
+	  
+	  <ppcomp>
+        <ppgetinfo       id="PPGetInfo00"     input00="00"></ppgetinfo>
+        <ppgetinfo       id="PPGetInfo03"     input00="03"></ppgetinfo>
+		<ppgetdukpt      id="PPGetDUKPTDES"   input00="201"></ppgetdukpt>
+		<ppgetdukpt      id="PPGetDUKPT3DES"  input00="301"></ppgetdukpt>
+	  </ppcomp>
+    </form>
+	
+    <form>
+      <componentes>
+        <picturebox  id="picturebox"        posx="0"   posy="0"   comprimento="100"    altura="30"   imagem="Cielo.png"     ></picturebox>
+        <label  id="MsgAguardeLabel"   posx="1"  posy="120" fontsize="18" comprimento="9999" altura="60" alinhamento="MiddleCenter">CONECTANDO AO SERVIDOR.\nAGUARDE...</label>
+      </componentes>
+    </form>
+  </dados>
+</mensagem>
+
+
+

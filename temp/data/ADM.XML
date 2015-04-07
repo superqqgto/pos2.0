@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<mensagem>
+  <header></header>
+  <dados>
+    <form>
+      <idtela>TelaADM</idtela>
+      <descricao>Tela inicial para serviços Administrativos</descricao>
+      <versao>1.00</versao>
+      <data>23/11/2008</data>
+
+	  <ppcomp>
+        <ppgetinfo       id="PPGetInfo00"     input00="00"></ppgetinfo>
+        <ppgetinfo       id="PPGetInfo03"     input00="03"></ppgetinfo>
+		<ppgetdukpt      id="PPGetDUKPTDES"   input00="201"></ppgetdukpt>
+		<ppgetdukpt      id="PPGetDUKPT3DES"  input00="301"></ppgetdukpt>
+	  </ppcomp>
+	  
+      <componentes>
+        <picturebox  id="picturebox"        posx="0"   posy="0"   comprimento="100"    altura="30"   imagem="Cielo.png"     ></picturebox>
+        <label  id="MsgAguardeLabel"   posx="1"  posy="120" fontsize="18" comprimento="9999" altura="60" alinhamento="MiddleCenter">CONECTANDO AO SERVIDOR.\nAGUARDE...</label>
+      </componentes>
+
+    </form>
+  </dados>
+</mensagem>
+
+
+

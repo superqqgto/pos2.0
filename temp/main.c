@@ -1,0 +1,902 @@
+#include "posapi.h"
+#include "posapi_all.h"
+#include "SxxCom.h"
+#include "util.h"
+#include "appLib.h"
+#include "lng.h"
+#include "FileOper.h"
+#include "TranProc.h"
+#include "xmlParser.h"
+#include "xmlProc.h"
+#include "ppcomp.h"
+#include "Wifi.h"
+#include "setup.h"
+#include "Vtef.h"
+#include "global.h"
+
+
+/********************** Internal macros declaration ************************/
+#define TIMER_TEMPORARY		4
+#define TIMERCNT_MAX	48000
+#define CLIENT_VERSION	"1.17"
+
+/********************** Internal structure declaration *********************/
+typedef struct _tagCLENT_INFO
+{
+	uchar szLogicalNum[8+1];
+	uchar szMerchantNum[2+1];
+	uchar szStoreNum[4+1];
+	uchar szPosNum[3+1];
+	uchar szSsid[SSID_MAXLEN];
+	uchar szSIMCard[30];
+	uchar szClientVer[10];
+	uchar szSOVer[10];
+	uchar szEMVVer[10];
+	uchar szIP[16];
+	uchar szBCVer[10];
+	uchar szCTLSVer[10];
+}ClientInfo;
+
+const APPINFO AppInfo =
+{
+	"CIELO",
+	CLIENT_VERSION,
+	CLIENT_VERSION,
+	"PAX TECHNOLOGY",
+	"FOR CIELO PROJECTS",
+	"",
+	0xFF,
+	0xFF,
+	0x01,
+	""
+};
+
+/********************** Internal functions declaration *********************/
+
+/********************** Internal variables declaration *********************/
+ClientInfo glInfo;
+
+/********************** external reference declaration *********************/
+extern int giBtOpened;
+
+extern int EMVReadVerInfo(char *paucVer);
+
+/******************>>>>>>>>>>>>>Implementations<<<<<<<<<<<<*****************/
+
+static unsigned char sIMG[]={
+0x08,
+0x00,0x80, 
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   
+0x00,0x80, 
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x80,0x80,0xc0,0xc0,0xc0,0xe0,0xe0,0xe0,
+   0xf0,0xf0,0xf0,0xf0,0x78,0x78,0x78,0x38,0x38,0x38,0x38,0x38,0x18,0x10,0x00,0x00,
+   0x80,0x80,0x80,0x80,0x80,0x80,0x80,0x80,0x80,0x80,0x80,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0xc0,0x20,0x10,0xe8,0xa8,0xa8,0xe8,0x50,0x10,0x20,0xc0,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   
+0x00,0x80, 
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x80,0xc0,0xe0,0xe0,0xf0,
+   0xf0,0xf8,0xfc,0xfc,0xfe,0x7e,0x3f,0x3f,0x1f,0x1f,0x0f,0x0f,0x07,0x07,0x83,0x83,
+   0xc1,0xc1,0xe0,0xe0,0xf0,0xf8,0xf8,0xf8,0x7c,0x7c,0x7e,0x3e,0x3e,0x3f,0x1f,0x1f,
+   0x0f,0x8f,0xef,0xff,0xff,0xff,0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x07,0x0e,0xfe,
+   0xfe,0xf8,0xe0,0x00,0x00,0x01,0x02,0x04,0x0f,0x08,0x08,0x0b,0x04,0x06,0x02,0x01,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   
+0x00,0x80, 
+   0x00,0x00,0x00,0x00,0x80,0xe0,0xf0,0xf8,0xfc,0xfe,0x7f,0x3f,0x1f,0x0f,0x0f,0x07,
+   0x03,0x03,0x01,0x00,0x80,0xc0,0xe0,0xf0,0xf8,0xf8,0xfc,0x7e,0x7f,0x1f,0x1f,0x0f,
+   0x0f,0x07,0x03,0x03,0x01,0x01,0x00,0x00,0x00,0x80,0xc0,0xc0,0xe0,0xf0,0xf8,0xfc,
+   0xfe,0x7f,0x3f,0x1f,0x07,0x01,0x00,0x00,0x00,0x80,0xc0,0xe0,0xf0,0xfc,0xfe,0xff,
+   0x7f,0x1f,0x03,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   
+0x00,0x80, 
+   0x00,0x00,0xfc,0xff,0xff,0xff,0x0f,0x03,0x01,0x00,0x00,0x00,0x00,0x00,0xc0,0xf0,
+   0xf8,0xfc,0x7e,0x1f,0x1f,0x0f,0x07,0x03,0x01,0x01,0x00,0x00,0x80,0x80,0xc0,0xc0,
+   0xe0,0xe0,0xf0,0xf0,0xf8,0xfc,0xfe,0x7e,0x3f,0x3f,0x1f,0x0f,0x0f,0x07,0x03,0x01,
+   0x80,0xc0,0xe0,0xf0,0xf8,0xf8,0xfc,0xfe,0xff,0x7f,0x3f,0x1f,0x0f,0x07,0x03,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   
+0x00,0x80, 
+   0x00,0x00,0x01,0x07,0x0f,0x1f,0x3e,0x3c,0x78,0x78,0x70,0x70,0x70,0x70,0x73,0x79,
+   0x79,0x78,0x78,0x78,0x78,0x7c,0x3c,0x3e,0x3e,0x3e,0x1e,0x1f,0x0f,0x0f,0x0f,0x07,
+   0x07,0x03,0x83,0x81,0xc1,0xe0,0xe0,0xf0,0xf0,0xf8,0xf8,0xfc,0x7c,0x7e,0x3e,0x3f,
+   0x1f,0x1f,0x0f,0x07,0x07,0x03,0x01,0x00,0x00,0x00,0x00,0x00,0x80,0xe0,0xf8,0xfe,
+   0xff,0xff,0xff,0xff,0xcf,0xc7,0xc7,0xc7,0xc7,0xc7,0xc7,0xc7,0xe7,0xff,0x7f,0x7e,
+   0x3e,0x9c,0x80,0xc0,0xe0,0xe0,0xf0,0x78,0x38,0x1c,0x1e,0x0e,0x0e,0xfe,0xfe,0xfe,
+   0xfe,0xfe,0xfe,0x00,0x00,0x00,0x02,0x02,0x06,0x0e,0x1e,0xbe,0xfe,0xfc,0xf8,0xf8,
+   0xf0,0xf0,0xf8,0xfc,0xbc,0x1e,0x1e,0x0e,0x06,0x06,0x02,0x02,0x00,0x00,0x00,0x00,
+   
+0x00,0x80, 
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x02,0x02,0x06,0x06,0x07,0x07,
+   0x07,0x07,0x07,0x03,0x03,0x03,0x01,0x01,0x01,0x01,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x08,0x0e,0x0f,0x0f,0x0f,0x0f,
+   0x07,0x01,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x08,0x08,0x0c,0x0e,0x0e,
+   0x0f,0x07,0x03,0x03,0x03,0x03,0x03,0x03,0x03,0x03,0x03,0x03,0x03,0x0f,0x0f,0x0f,
+   0x0f,0x0f,0x0f,0x00,0x08,0x08,0x0c,0x0e,0x0e,0x0f,0x0f,0x0f,0x07,0x03,0x03,0x01,
+   0x01,0x03,0x03,0x0f,0x0f,0x0f,0x0e,0x0c,0x0c,0x08,0x08,0x00,0x00,0x00,0x00,0x00,
+   
+0x00,0x80, 
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
+   0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 
+   
+};
+
+
+int LoadInitKey(void)
+{
+	ST_KCV_INFO KcvInfoIn;
+	int iRet;
+	GetTimerCount();
+
+	PedErase();
+	memset(&KcvInfoIn, 0x00, sizeof(ST_KCV_INFO));
+	KcvInfoIn.iCheckMode = 0;
+	iRet = PedWriteTIK(0x01, 0, 16, "\x11\x22\x33\x44\x55\x66\x77\x88\x99\xAA\xBB\xCC\xDD\xEE\xFF\xFF", "\x01\x23\x45\x67\x89\xAB\xCD\xEF", &KcvInfoIn);
+	return iRet;
+}
+
+void FirstRunProc(void)
+{
+	ST_WIFI_AP WifiAp;
+	int iRet;
+
+	if(fexist((char *)FILE_SYS_CTRL) < 0 )
+	{
+		LoadDefault();
+		//Cielo requirement: connect wifi and auto config at the first run. linzhao 2015.1.26
+		WifiPrompt();
+		FirstAutoConfig();
+		//LoadInitKey(); //removed by wuc 2014.8.20
+	}
+	else
+	{
+		GetSysCtrl();
+		DebugOutput("%s--%d--%s, firstRun:%d, bActivate:%d\n", __FILE__, __LINE__, __FUNCTION__, glSysCtrl.ucFirstRun, glSysCtrl.bActivate);
+		//if the FirstAutoConfig() didn't complete by some unknow reasons, do it again. linzhao 2015.1.26
+		if (0!=glSysCtrl.ucFirstRun ||1!=glSysCtrl.bActivate )
+		{
+			WifiPrompt();
+			FirstAutoConfig();
+		}
+	}
+
+	OpenCombKey(); //add by wuc 2014.1.2
+		
+	kbflush();
+	if(glSysCtrl.ucCommType == WIFI_USE)
+	{
+		if(strlen(glSysCtrl.stAppWifiPara.Ssid) == 0)
+		{
+			PubDispString(_T("NO AP CONNECTED"), DISP_LINE_CENTER|2);
+		}
+		//if the wifi already connect, just return.linzhao 2015.2.5
+		else if ( WifiCheck(&WifiAp)>0 )
+			return;
+		else
+		{
+			ScrPrint(0, 1, 0, _T("CURRENT AP: %s\n"), glSysCtrl.stAppWifiPara.Ssid);
+			PubDispString(_T("CONNECT..."), DISP_LINE_CENTER|2);
+			iRet = WifiApLogin();
+			ScrClrBelow(2);
+			if(iRet == 0)
+			{
+				PubDispString(_T("CONNECT SUCCESS"), DISP_LINE_CENTER|2);
+			}
+			else
+			{
+				PubDispString(_T("CONNECT FAIL"), DISP_LINE_CENTER|2);
+			}
+		}
+		PubWaitKey(5);
+	}
+	else if(glSysCtrl.ucCommType == GPRS_USE)
+	{
+		ScrCls();
+		PubDispString(_T("INIT COMM..."), DISP_LINE_CENTER|3);
+		/************++modified by wuc 2013.12.17************/
+		WlSelSim(glSysCtrl.ucSlot);
+		if(SLOT_1 == glSysCtrl.ucSlot)
+		{
+			SXXWlInit(&glSysCtrl.stWirelessPara1);
+		}
+		else
+		{
+			SXXWlInit(&glSysCtrl.stWirelessPara2);
+		}
+		/************--modified by wuc 2013.12.17************/
+	}
+}
+
+/************++add by wuc 2014.1.2************/
+void ChangeSlot(void)
+{
+	ScrCls();
+	PubDispString(_T("CHANGING SLOT..."), DISP_LINE_CENTER|3);
+	
+	if(SLOT_1 == glSysCtrl.ucSlot)
+	{
+		glSysCtrl.ucSlot = SLOT_2;
+	}
+	else if(SLOT_2 == glSysCtrl.ucSlot)
+	{
+		glSysCtrl.ucSlot = SLOT_1;
+	}
+	
+	WlSelSim(glSysCtrl.ucSlot);
+	if(SLOT_1 == glSysCtrl.ucSlot)
+	{
+		SXXWlInit(&glSysCtrl.stWirelessPara1);
+		
+		ScrCls();
+		PubDispString(_T("CHANGE TO SLOT1"), DISP_LINE_CENTER|3);
+	}
+	else if(SLOT_2 == glSysCtrl.ucSlot)
+	{
+		SXXWlInit(&glSysCtrl.stWirelessPara2);
+		
+		ScrCls();
+		PubDispString(_T("CHANGE TO SLOT2"), DISP_LINE_CENTER|3);
+	}
+
+	SaveSysCtrl();
+
+	kbflush();
+	PubWaitKey(2);
+}
+
+void DispMainMenu(void)
+{
+	int iRet;
+	uchar ucUserInput;
+	
+	ScrCls();
+	DispPictureBox("Cielologo.jpg", 1, 0, 0);
+	SetScreenLine(ROW_8_LINE);
+	DispLabel(_T("MENU"), 2, DISP_LINE_CENTER);
+	PubDispString(_T("01. PAYMENT"), DISP_LINE_LEFT|3);
+	ScrDrawLine(3, GRAY_COLOR);
+	PubDispString(_T("02. VOID"), DISP_LINE_LEFT|4);
+	ScrDrawLine(4, GRAY_COLOR);
+	PubDispString(_T("03. ADMIN"), DISP_LINE_LEFT|5);
+	ScrDrawLine(5, GRAY_COLOR);
+	ScrDrawLine(6, GRAY_COLOR);
+	SetScreenLine(ROW_9_LINE);
+	
+	kbflush();
+	while(1)
+	{
+		iRet = PubWaitKey(USER_OPER_TIMEOUT);
+		switch(iRet)
+		{
+			case KEY1:
+				Trans_Payment();
+				break;
+
+			case KEY2:
+				Trans_Void();
+				break;
+
+			case KEY3:
+				Trans_Admin();
+				break;
+		#ifdef _TERMINAL_DXX_
+			case KEYF1:
+		#else
+			case KEYATM1:
+		#endif
+				if(0 == Enterfunctions(&ucUserInput))
+				{
+					if ('2'==ucUserInput)
+					{
+						Function();
+					}
+					else if ('0'==ucUserInput)
+					{
+						ConnectTest();
+					}
+				}
+				break;
+		#ifdef _TERMINAL_DXX_ //add by wuc 2014.9.9
+			case KEYF2:
+		#else
+			case KEYATM2:
+		#endif
+				WifiConfig();
+				SaveSysCtrl();
+				break;
+
+			default:
+				break;
+		}
+	#ifdef _TERMINAL_DXX_
+		if(iRet == KEY1 || iRet == KEY2 || iRet == KEY3 || iRet == KEYF1 || iRet == KEYF2 || iRet == NOKEY || iRet == KEYCANCEL  || glSysCtrl.bVTEFOpt) //modify by wuc 2014.9.9
+	#else
+		if(iRet == KEY1 || iRet == KEY2 || iRet == KEY3 || iRet == KEYATM1 || iRet == KEYATM2 || iRet == NOKEY || iRet == KEYCANCEL)
+	#endif
+		{
+			break;
+		}
+	}
+}
+
+void SwitchImage(char *szImage)
+{
+	if(!strcmp(szImage, "Tela1.bmp"))
+	{
+		strcpy(szImage, "Tela2.bmp");
+	}
+	else if(!strcmp(szImage, "Tela2.bmp"))
+	{
+		strcpy(szImage, "Tela3.bmp");
+	}
+	else if(!strcmp(szImage, "Tela3.bmp"))
+	{
+		strcpy(szImage, "Tela4.bmp");
+	}
+	else if(!strcmp(szImage, "Tela4.bmp"))
+	{
+		strcpy(szImage, "Tela1.bmp");
+	}
+}
+
+void SwitchText(uchar index)
+{
+	ScrCls();
+	if(1 == index)
+	{
+		ScrPrint(0, 0, 0, _T("Logical Number: %s"), glInfo.szLogicalNum);
+		ScrPrint(0, 1, 0, _T("COMPANY : %s"), glInfo.szMerchantNum);
+		ScrPrint(0, 2, 0, _T("STORE   : %s"), glInfo.szStoreNum);
+		ScrPrint(0, 3, 0, _T("PDV     : %s"), glInfo.szPosNum);
+		ScrPrint(0, 4, 0, _T("SSID NETWORK:"));
+		ScrPrint(0, 5, 0, "%s", glInfo.szSsid);
+		ScrPrint(0, 6, 0, _T("SIMCARD:"));
+		ScrPrint(0, 7, 0, "%s", glInfo.szSIMCard);
+	}
+	else if(2 == index)
+	{
+		ScrPrint(0, 0, 0, _T("CLIENT VERSION: %s"), glInfo.szClientVer);
+		ScrPrint(0, 1, 0, _T("SO   : %s"), glInfo.szSOVer);
+		ScrPrint(0, 2, 0, _T("EMV  : %s"), glInfo.szEMVVer);
+		ScrPrint(0, 3, 0, _T("IP   : %s"), glInfo.szIP);
+		ScrPrint(0, 4, 0, _T("BC   : %s"), glInfo.szBCVer);
+		ScrPrint(0, 5, 0, _T("CTLS : %s"), glInfo.szCTLSVer);
+	}
+}
+
+void GetClientInfo(void)
+{
+	int iRet;
+	uchar   rsp[8 * 1024], version[30], tmp[30];
+	uchar *pBegin, *pEnd;
+
+	//Logical Number
+	strcpy(glInfo.szLogicalNum, "");
+
+	//COMPANY
+	strcpy(glInfo.szMerchantNum, glSysCtrl.szMerchantNum);
+
+	//STORE
+	strcpy(glInfo.szStoreNum, glSysCtrl.szStoreNum);
+
+	//PDV
+	strcpy(glInfo.szPosNum, glSysCtrl.szPosNum);
+
+	//SSID NETWORK
+	strcpy(glInfo.szSsid, glSysCtrl.stAppWifiPara.Ssid);
+
+	//SIMCARD
+	if(GPRS_USE == glSysCtrl.ucCommType)
+	{
+		iRet = WlPppCheck();
+		if (0 == iRet)
+		{
+			memset(rsp, 0, sizeof(rsp));
+			WlSendCmd("AT+COPS?\r", (unsigned char *)rsp, sizeof(rsp), 10*1000, 20);
+			pEnd = rsp;
+			pBegin = strstr(pEnd, "\"");
+			pBegin++;
+			pEnd = strstr(pBegin, "\"");
+			memset(tmp, 0, sizeof(tmp));
+			memcpy(tmp, pBegin, pEnd - pBegin);
+			strcpy(glInfo.szSIMCard, tmp);
+		}
+		else
+		{
+			strcpy(glInfo.szSIMCard, "");
+		}
+	}
+	else
+	{
+		strcpy(glInfo.szSIMCard, "");
+	}
+
+	//CLIENT VERSION
+	strcpy(glInfo.szClientVer, CLIENT_VERSION);
+
+	//OS VERSION
+	memset(version, 0, sizeof(version));
+	memset(tmp, 0, sizeof(tmp));
+	ReadVerInfo(tmp);
+	sprintf(version, "%d.%02d", tmp[1], tmp[2]);
+	strcpy(glInfo.szSOVer, version);
+
+	//EMV VERSION
+	memset(version, 0, sizeof(version));
+	EMVReadVerInfo(version);
+	pBegin = version;
+	pEnd = strstr(pBegin, " ");
+	memset(tmp, 0, sizeof(tmp));
+	memcpy(tmp, pBegin, pEnd - pBegin);
+	strcpy(glInfo.szEMVVer, tmp);
+
+	//Local IP
+	if(GPRS_USE == glSysCtrl.ucCommType)
+	{
+		strcpy(glInfo.szIP, glSysCtrl.szLocalIp);
+	}
+	else
+	{
+		strcpy(glInfo.szIP, "");
+	}
+
+	//BC VERSION
+	strcpy(glInfo.szBCVer, "v108");
+
+	//CTLS VERSION
+	strcpy(glInfo.szCTLSVer, "v302");
+}
+
+void PrnTermInfo(void)
+{
+	ST_FONT font1;
+	uchar buff[512];
+	
+	font1.CharSet = 0x01;
+	font1.Width   = 8;
+	font1.Height  = 16;
+	font1.Bold    = 0;
+	font1.Italic  = 0;
+	
+	PrnInit();
+	PrnSelectFont(&font1,NULL);
+	PrnDoubleHeight(1, 1);
+
+	memset(buff, 0, sizeof(buff));
+	strcpy(buff, "Logical Number: ");
+	strcat(buff, glInfo.szLogicalNum);
+	strcat(buff, "\n");
+	strcat(buff, "COMPANY: ");
+	strcat(buff, glInfo.szMerchantNum);
+	strcat(buff, "\n");
+	strcat(buff, "STORE: ");
+	strcat(buff, glInfo.szStoreNum);
+	strcat(buff, "\n");
+	strcat(buff, "PDV: ");
+	strcat(buff, glInfo.szPosNum);
+	strcat(buff, "\n");
+	strcat(buff, "SSID NETWORK: ");
+	strcat(buff, glInfo.szSsid);
+	strcat(buff, "\n");
+	strcat(buff, "SIMCARD: ");
+	strcat(buff, glInfo.szSIMCard);
+	strcat(buff, "\n");
+	strcat(buff, "CLIENT VERSION: ");
+	strcat(buff, glInfo.szClientVer);
+	strcat(buff, "\n");
+	strcat(buff, "SO: ");
+	strcat(buff, glInfo.szSOVer);
+	strcat(buff, "\n");
+	strcat(buff, "EMV: ");
+	strcat(buff, glInfo.szEMVVer);
+	strcat(buff, "\n");
+	strcat(buff, "IP: ");
+	strcat(buff, glInfo.szIP);
+	strcat(buff, "\n");
+	strcat(buff, "BC: ");
+	strcat(buff, glInfo.szBCVer);
+	strcat(buff, "\n");
+	strcat(buff, "CTLS: ");
+	strcat(buff, glInfo.szCTLSVer);
+	strcat(buff, "\n\n\n\n\n\n\n\n");
+
+	PrnStr(buff);
+	StartPrinter();
+}
+
+void ConfirmPrn(void)
+{
+	uchar ucKey;
+	
+	ScrCls();
+	PubDispString(_T("PRINT"), DISP_LINE_CENTER|2);
+	PubDispString(_T("RECEIPT?"), DISP_LINE_CENTER|3);
+	ScrPrint(0, 4, 0, _T("1-YES"));
+	ScrPrint(0, 5, 0, _T("2-NO"));
+
+	while(1)
+	{
+		ucKey = getkey();
+		switch(ucKey)
+		{
+			case KEY1:
+				PrnTermInfo();
+				return;
+				
+			case KEY2:
+				return;
+				
+			default:
+				break;
+		}
+	}
+}
+
+void DispTermInfo(void)
+{
+	uchar ucKey, ucIndex = 1;
+
+	memset(&glInfo, 0, sizeof(glInfo));
+	GetClientInfo();
+
+	while(1)
+	{
+		SwitchText(ucIndex);
+		
+		ucKey = getkey();
+		switch(ucKey)
+		{
+		#ifdef _TERMINAL_DXX_
+			case KEYF1:
+		#else
+			case KEYATM1:
+		#endif
+				ucIndex = 1;
+				break;
+
+		#ifdef _TERMINAL_DXX_
+			case KEYF2:
+		#else
+			case KEYATM2:
+		#endif
+				ucIndex = 2;
+				break;
+
+			case KEYENTER:
+				ConfirmPrn();
+				return;
+				
+			case KEYCANCEL:
+				return;
+				
+			default:
+				break;
+		}
+	}
+}
+
+void DispInitScreen(void)
+{
+	int iRet;
+	char szImage[20];
+	uchar ucUserInput;
+
+	memset(szImage, 0, sizeof(szImage));
+	strcpy(szImage, "Tela1.bmp");
+	
+	while(1)
+	{
+		ScrCls();
+		DispPictureBox(szImage, 0, 0, 0);
+		
+		iRet = GetCard(CARD_KEYIN | CARD_SWIPED | CARD_INSERTED);
+		switch(iRet)
+		{
+			case EVENT_NO_KEY:
+				SwitchImage(szImage);
+				break;
+
+			case EVENT_NUM_KEY:
+				DispMainMenu();
+				break;
+
+			case EVENT_TERM_INFO:
+				DispTermInfo();
+				break;
+				
+			case EVENT_FUNC_KEY:
+				if(0 == Enterfunctions(&ucUserInput))
+				{
+					if ('2'==ucUserInput)
+					{
+						Function();
+					}
+					else if ('0'==ucUserInput)
+					{
+						ConnectTest();
+					}
+				}
+				break;
+				
+			case EVENT_WIFI_SHOTCUT: //add by wuc 2014.9.9
+				WifiConfig();
+				SaveSysCtrl();
+				break;
+
+			case EVENT_SWIPED:
+			case EVENT_INSERTED:
+				Trans_Payment();
+				break;
+				
+			default:
+				break;
+		}
+
+	#ifdef _TERMINAL_DXX_
+		if(glSysCtrl.bVTEFOpt || (0 == glSysCtrl.bUnlock))
+		{
+			break;
+		}
+	#endif
+	}
+}
+
+void DispVTEFScreen(void)
+{
+	int iRet;
+	uchar ucUserInput;
+	
+	ScrCls();
+	DispPictureBox("Cielologo.jpg", 1, 0, 0);
+	PubDispString(_T("WELCOME USE POS2.0"), DISP_LINE_CENTER|3);
+	PubDispString(_T("WAITING..."), DISP_LINE_CENTER|4);
+
+	while(1)
+	{
+		if(glConnectFlag && (!glStartServer))
+		{
+			if(WifiStartServer() == 0)
+			{
+				glStartServer = 1;
+			}
+			else
+			{
+				glStartServer = 0;
+			}
+		}
+
+		if(glConnectFlag && glStartServer && (!glAcceptClient))
+		{
+			if(Netioctl(server_socket_id, CMD_EVENT_GET, 0) == SOCK_EVENT_ACCEPT)
+			{
+				if(WifiAccept() >= 0)
+				{
+					if(glSysCtrl.bDebugOpt)
+					{
+						DebugOutput("wifi accept");
+					}
+					glAcceptClient = 1;
+				}
+				else
+				{
+					glAcceptClient = 0;
+				}
+			}
+		}
+
+		if(glAcceptClient)
+		{
+			if(WifiStatus() == 0)
+			{
+				VTEFMain();
+			}
+			else
+			{
+				glAcceptClient = glStartServer = 0;
+			}
+		}
+
+		if(PubKeyPressed())
+		{
+			iRet = getkey();
+			
+		#ifdef _TERMINAL_DXX_
+			if(KEYF1 == iRet)
+		#else
+			if(KEYATM1 == iRet)
+		#endif
+			{
+				if(0 == Enterfunctions(&ucUserInput))
+				{
+					if ('2'==ucUserInput)
+					{
+						Function();
+					}
+					else if ('0'==ucUserInput)
+					{
+						ConnectTest();
+					}
+				}
+				break;
+			}
+		#ifdef _TERMINAL_DXX_
+			else if(KEYF2 == iRet)
+		#else
+			else if(KEYATM2 == iRet)
+		#endif
+			{
+				WifiConfig();
+				SaveSysCtrl();
+				break;
+			}
+		}
+	}
+}
+
+void DispLockScreen(void)
+{
+	int iRet;
+	uchar ucUserInput;
+	
+	ScrCls();
+	DispPictureBox("Cielologo.jpg", 1, 0, 0);
+	PubDispString(_T("CLIENT LOCKED"), DISP_LINE_CENTER|4);
+
+	while(1)
+	{
+		if(PubKeyPressed())
+		{
+			iRet = getkey();
+			
+		#ifdef _TERMINAL_DXX_
+			if(KEYF1 == iRet)
+		#else
+			if(KEYATM1 == iRet)
+		#endif
+			{
+				if(0 == Enterfunctions(&ucUserInput))
+				{
+					if ('0'==ucUserInput)
+					{
+						ConnectTest();
+					}
+					else if ('2'==ucUserInput)
+					{
+						Function();
+					}
+				}
+				break;
+			}
+		#ifdef _TERMINAL_DXX_
+			else if(KEYF2 == iRet)
+		#else
+			else if(KEYATM2 == iRet)
+		#endif
+			{
+				WifiConfig();
+				SaveSysCtrl();
+				break;
+			}
+		}
+	}
+}
+/************--add by wuc 2014.1.2************/
+
+static int GetTerminalInfo(void)
+{
+	uchar szInfo[128];
+	uchar uiTerminalType;
+
+	memset(szInfo, 0, sizeof(szInfo));
+	GetTermInfo(szInfo);
+	
+	uiTerminalType = szInfo[0];
+#ifdef _TERMINAL_DXX_
+	if(uiTerminalType != 16 && uiTerminalType != 15)	//d210 and d200
+#else
+	if(uiTerminalType != 10 && uiTerminalType != 7)	//s90 and S80
+#endif
+	{
+		return -1;
+	}
+
+	if(szInfo[8] != 0)
+	{
+		glCommMode |= LAN_MODE;
+	}
+	if(szInfo[9] != 0)
+	{
+		glCommMode |= GPRS_MODE;
+	}
+	if(szInfo[11] != 0)
+	{
+		glCommMode |= WIFI_MODE;
+	}
+	return 0;
+}
+
+int event_main(ST_EVENT_MSG *pstEventMsg)
+{
+	return 0;
+}
+
+int main(void)
+{
+	SystemInit();
+	glConnectFlag = glStartServer = glAcceptClient = 0;
+	SetScreenLine(ROW_9_LINE);
+	if(GetTerminalInfo() < 0) //unsupported, just support S90 and D210 currently
+	{
+		ScrCls();
+		PubDispString(_T("THIS APPLICATION CAN'T"), DISP_LINE_CENTER|3);
+		PubDispString(_T("RUN ON THIS TERMINAL"), DISP_LINE_CENTER|4);
+		PubWaitKey(10);
+		return 0;
+	}
+
+	PP_Open("01");
+	SetLng("CIELO.LNG");
+	ScrCls();
+#ifdef _TERMINAL_DXX_
+	if(glCommMode&WIFI_MODE)
+	{
+		WifiOpen();
+	}
+#endif
+	FirstRunProc();
+
+	while(1)
+	{
+		if((0 == glSysCtrl.bUnlock) || (fexist((char *)FILE_ATV_FILE) < 0))
+		{
+			DispLockScreen();
+		}
+		else
+		{
+		#ifdef _TERMINAL_DXX_
+			if(glSysCtrl.bVTEFOpt)
+			{
+				DispVTEFScreen();
+			}
+			else
+		#endif
+			{
+				DispInitScreen();
+			}
+		}
+	}
+
+	PP_Close(NULL);
+#ifdef _TERMINAL_DXX_
+	WifiClose();
+#endif
+	exit(0);
+}
+
+// end of file

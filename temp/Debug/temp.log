@@ -1,0 +1,396 @@
+﻿生成启动时间为 2015-04-02 13:53:54。
+     1>项目“C:\PaxPayPro2010\myapp\temp\temp.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“.\Debug\temp.lastbuildstate”。
+       InitializeBuildStatus:
+         正在创建“.\Debug\temp.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I"C:\PAXPAY~1\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _MBCS /X /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TC /analyze- /errorReport:prompt appLib.c FileOper.c lng.c Logo.c main.c setup.c sslcomm.c SxxCom.c TranProc.c util.c Vtef.c Wifi.c xmlParser.c xmlProc.c
+         xmlProc.c
+     1>c:\paxpaypro2010\myapp\temp\xmlproc.c(232): warning C4101: “iRet”: 未引用的局部变量
+     1>c:\paxpaypro2010\myapp\temp\xmlproc.c(1446): warning C4101: “szCurTime”: 未引用的局部变量
+         xmlParser.c
+     1>c:\paxpaypro2010\myapp\temp\xmlparser.c(730): warning C4101: “bSmallAlpha”: 未引用的局部变量
+         Wifi.c
+         Vtef.c
+         util.c
+         TranProc.c
+         SxxCom.c
+         sslcomm.c
+     1>c:\paxpaypro2010\myapp\temp\sslcomm.c(49): warning C4101: “iEvent”: 未引用的局部变量
+         setup.c
+     1>c:\paxpaypro2010\myapp\temp\setup.c(1274): warning C4101: “szDnsResult”: 未引用的局部变量
+     1>c:\paxpaypro2010\myapp\temp\setup.c(1868): warning C4101: “ulCRC”: 未引用的局部变量
+     1>c:\paxpaypro2010\myapp\temp\setup.c(1867): warning C4101: “iRet”: 未引用的局部变量
+     1>c:\paxpaypro2010\myapp\temp\setup.c(1898): warning C4101: “ulCRC”: 未引用的局部变量
+     1>c:\paxpaypro2010\myapp\temp\setup.c(1897): warning C4101: “iRet”: 未引用的局部变量
+         main.c
+         Logo.c
+         lng.c
+         FileOper.c
+         appLib.c
+         正在生成代码...
+     1>c:\paxpaypro2010\myapp\temp\sslcomm.c(238): warning C4715: “Ssl_OnHook”: 不是所有的控件路径都返回值
+     1>c:\paxpaypro2010\myapp\temp\sxxcom.c(323): warning C4700: 使用了未初始化的局部变量“dnsResult”
+     1>c:\paxpaypro2010\myapp\temp\util.c(304): warning C4700: 使用了未初始化的局部变量“pszMsgNotify”
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo".\Debug\temp.exe.embed.manifest.res" .\Debug\temp_manifest.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug/temp.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\PaxPayPro2010\myapp\temp\lib /LIBPATH:"C:\PAXPAY~1\LIB" payprocore.lib EntryVS2010.lib gzip.lib libClAE_v102.lib libClENTRY_v501.lib libClMC_v302.lib libClWAVE_v302.lib ppcomp_lib_v110.lib SFM_EmvPC_v505.lib libCrypto_V1.0.lib ws2_32.lib win_ssl.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libc.lib /NODEFAULTLIB:libcd.lib /MANIFEST /ManifestFile:".\Debug\temp.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:".\Debug/temp.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Debug\temp.lib" /MACHINE:X86 .\Debug\temp.exe.embed.manifest.res
+         .\Debug/appLib.obj
+         .\Debug/FileOper.obj
+         .\Debug/lng.obj
+         .\Debug/Logo.obj
+         .\Debug/main.obj
+         .\Debug/setup.obj
+         .\Debug/sslcomm.obj
+         .\Debug/SxxCom.obj
+         .\Debug/TranProc.obj
+         .\Debug/util.obj
+         .\Debug/Vtef.obj
+         .\Debug/Wifi.obj
+         .\Debug/xmlParser.obj
+         .\Debug/xmlProc.obj
+     1>gzip.lib(adler32.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(adler32.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>gzip.lib(crc32.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(crc32.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>gzip.lib(deflate.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(deflate.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>gzip.lib(gzip.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(gzip.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>gzip.lib(inffast.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(inffast.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>gzip.lib(inflate.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(inflate.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>gzip.lib(inftrees.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(inftrees.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>gzip.lib(Mymalloc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(Mymalloc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>gzip.lib(trees.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(trees.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>gzip.lib(zutil.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(zutil.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClAE_v102.lib(Api.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClAE_v102.lib(Api.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClAE_v102.lib(Auth.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClAE_v102.lib(Auth.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClAE_v102.lib(Conv.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClAE_v102.lib(Conv.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClAE_v102.lib(Element.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClAE_v102.lib(Element.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClAE_v102.lib(PiccCmd.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClAE_v102.lib(PiccCmd.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClAE_v102.lib(TransProc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClAE_v102.lib(TransProc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClENTRY_v501.lib(CLEntryApi.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClENTRY_v501.lib(CLEntryApi.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClENTRY_v501.lib(CLEntryIcc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClENTRY_v501.lib(CLEntryIcc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClENTRY_v501.lib(CLEntryProc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClENTRY_v501.lib(CLEntryProc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClENTRY_v501.lib(CLEntryPub.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClENTRY_v501.lib(CLEntryPub.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClMC_v302.lib(clss_app_mc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClMC_v302.lib(clss_app_mc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClMC_v302.lib(clss_elements_mc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClMC_v302.lib(clss_elements_mc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClMC_v302.lib(clss_icc_mc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClMC_v302.lib(clss_icc_mc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClMC_v302.lib(clss_Paypass_mc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClMC_v302.lib(clss_Paypass_mc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClMC_v302.lib(clss_pub_mc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClMC_v302.lib(clss_pub_mc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClMC_v302.lib(clss_security_mc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClMC_v302.lib(clss_security_mc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClMC_v302.lib(clss_trans_mc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClMC_v302.lib(clss_trans_mc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClMC_v302.lib(clssApi_mc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClMC_v302.lib(clssApi_mc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClWAVE_v302.lib(clss_app_wave.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClWAVE_v302.lib(clss_app_wave.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClWAVE_v302.lib(clss_elements_wave.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClWAVE_v302.lib(clss_elements_wave.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClWAVE_v302.lib(clss_icc_wave.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClWAVE_v302.lib(clss_icc_wave.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClWAVE_v302.lib(clss_pub_wave.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClWAVE_v302.lib(clss_pub_wave.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClWAVE_v302.lib(clss_security_wave.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClWAVE_v302.lib(clss_security_wave.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClWAVE_v302.lib(clss_trans_wave.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClWAVE_v302.lib(clss_trans_wave.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClWAVE_v302.lib(clssApi_wave.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClWAVE_v302.lib(clssApi_wave.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(app_gen.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(app_gen.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(app_main.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(app_main.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(app_msg.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(app_msg.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(app_tibc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(app_tibc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(app_util.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(app_util.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(banrisul.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(banrisul.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(cielo.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(cielo.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(file_std.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(file_std.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(man_main.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(man_main.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(man_msg.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(man_msg.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(menu.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(menu.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(multiapp.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(multiapp.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(pax_clss.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(pax_clss.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(ppc_emvs.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(ppc_emvs.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(ppc_gpin.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(ppc_gpin.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(ppc_util.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(ppc_util.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(ppcomp.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(ppcomp.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(ppcomp_pax.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(ppcomp_pax.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(ppeevc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(ppeevc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(pplib_pax.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(pplib_pax.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(ppsamadv.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(ppsamadv.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(ppsamvst.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(ppsamvst.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(pptibc1.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(pptibc1.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(pptibc3.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(pptibc3.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(pputils.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(pputils.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(redecard.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(redecard.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(shared.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(shared.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(utils.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(utils.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(paxm_bas.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(paxm_bas.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(paxm_ifd.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(paxm_ifd.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(posp_tim.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(posp_tim.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(sp30_main.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(sp30_main.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(xplgutil.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(xplgutil.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>SFM_EmvPC_v505.lib(appman.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“SFM_EmvPC_v505.lib(appman.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>SFM_EmvPC_v505.lib(elements.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“SFM_EmvPC_v505.lib(elements.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>SFM_EmvPC_v505.lib(icc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“SFM_EmvPC_v505.lib(icc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>SFM_EmvPC_v505.lib(pub.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“SFM_EmvPC_v505.lib(pub.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>SFM_EmvPC_v505.lib(security.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“SFM_EmvPC_v505.lib(security.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>SFM_EmvPC_v505.lib(trans.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“SFM_EmvPC_v505.lib(trans.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>SFM_EmvPC_v505.lib(TransLog.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“SFM_EmvPC_v505.lib(TransLog.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(aes_cbc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(aes_cbc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(aes_cfb.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(aes_cfb.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(aes_core.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(aes_core.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(aes_ecb.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(aes_ecb.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(aes_misc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(aes_misc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(aes_ofb.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(aes_ofb.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(des_enc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(des_enc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(set_key.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(set_key.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(rc4_enc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(rc4_enc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(rc4_skey.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(rc4_skey.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(rc4_utl.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(rc4_utl.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(md2_dgst.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(md2_dgst.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(md5_dgst.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(md5_dgst.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(sha1dgst.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(sha1dgst.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(sha256.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(sha256.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(sha512.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(sha512.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(sha_dgst.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(sha_dgst.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_add.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_add.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_asm.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_asm.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_blind.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_blind.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_ctx.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_ctx.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_div.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_div.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_exp.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_exp.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_gcd.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_gcd.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_lib.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_lib.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_mod.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_mod.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_mont.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_mont.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_mul.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_mul.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_rand.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_rand.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_recp.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_recp.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_shift.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_shift.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_sqr.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_sqr.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_word.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_word.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(mem.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(mem.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(mem_clr.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(mem_clr.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(o_init.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(o_init.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(err.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(err.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(digest.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(digest.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(evp_lib.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(evp_lib.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(cbc128.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(cbc128.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(cfb128.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(cfb128.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(ofb128.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(ofb128.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(md_rand.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(md_rand.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(rand_lib.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(rand_lib.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(rand_unix.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(rand_unix.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(hmac.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(hmac.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(e_aes.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(e_aes.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(e_des3.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(e_des3.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(e_rc4.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(e_rc4.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(encode.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(encode.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(evp_enc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(evp_enc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(evp_lib.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(evp_lib.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(m_md2.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(m_md2.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(m_md5.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(m_md5.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(m_sha.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(m_sha.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(m_sha1.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(m_sha1.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(mem_pool.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(mem_pool.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(obj_dat.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(obj_dat.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(oids.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(oids.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(p_lib.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(p_lib.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(p_verify.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(p_verify.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(packet_ber.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(packet_ber.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(packet_x509af.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(packet_x509af.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(packet_x509ce.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(packet_x509ce.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(packet_x509if.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(packet_x509if.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(packet_x509sat.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(packet_x509sat.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(rsa_eay.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(rsa_eay.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(rsa_lib.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(rsa_lib.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(rsa_none.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(rsa_none.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(rsa_oaep.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(rsa_oaep.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(rsa_pk1.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(rsa_pk1.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(rsa_sign.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(rsa_sign.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(rsa_ssl.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(rsa_ssl.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(ssl_cert.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(ssl_cert.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(ssl_sys.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(ssl_sys.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(t1_client.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(t1_client.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(tasn_enc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(tasn_enc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(tvbuff.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(tvbuff.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(value_string.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(value_string.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(x509_algid.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(x509_algid.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(x509_debug.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(x509_debug.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(x509_mem.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(x509_mem.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+       Manifest:
+         正在删除文件“.\Debug\temp.exe.embed.manifest”。
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:".\Debug\temp.exe.embed.manifest" /manifest .\Debug\temp.exe.intermediate.manifest
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo".\Debug\temp.exe.embed.manifest.res" .\Debug\temp_manifest.rc 
+       LinkEmbedManifest:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug/temp.exe" /INCREMENTAL /NOLOGO /LIBPATH:C:\PaxPayPro2010\myapp\temp\lib /LIBPATH:"C:\PAXPAY~1\LIB" payprocore.lib EntryVS2010.lib gzip.lib libClAE_v102.lib libClENTRY_v501.lib libClMC_v302.lib libClWAVE_v302.lib ppcomp_lib_v110.lib SFM_EmvPC_v505.lib libCrypto_V1.0.lib ws2_32.lib win_ssl.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libc.lib /NODEFAULTLIB:libcd.lib /MANIFEST /ManifestFile:".\Debug\temp.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:".\Debug/temp.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Debug\temp.lib" /MACHINE:X86 .\Debug\temp.exe.embed.manifest.res
+         .\Debug/appLib.obj
+         .\Debug/FileOper.obj
+         .\Debug/lng.obj
+         .\Debug/Logo.obj
+         .\Debug/main.obj
+         .\Debug/setup.obj
+         .\Debug/sslcomm.obj
+         .\Debug/SxxCom.obj
+         .\Debug/TranProc.obj
+         .\Debug/util.obj
+         .\Debug/Vtef.obj
+         .\Debug/Wifi.obj
+         .\Debug/xmlParser.obj
+         .\Debug/xmlProc.obj
+     1>gzip.lib(adler32.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(adler32.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>gzip.lib(crc32.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(crc32.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>gzip.lib(deflate.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(deflate.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>gzip.lib(gzip.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(gzip.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>gzip.lib(inffast.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(inffast.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>gzip.lib(inflate.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(inflate.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>gzip.lib(inftrees.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(inftrees.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>gzip.lib(Mymalloc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(Mymalloc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>gzip.lib(trees.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(trees.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>gzip.lib(zutil.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“gzip.lib(zutil.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClAE_v102.lib(Api.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClAE_v102.lib(Api.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClAE_v102.lib(Auth.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClAE_v102.lib(Auth.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClAE_v102.lib(Conv.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClAE_v102.lib(Conv.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClAE_v102.lib(Element.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClAE_v102.lib(Element.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClAE_v102.lib(PiccCmd.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClAE_v102.lib(PiccCmd.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClAE_v102.lib(TransProc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClAE_v102.lib(TransProc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClENTRY_v501.lib(CLEntryApi.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClENTRY_v501.lib(CLEntryApi.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClENTRY_v501.lib(CLEntryIcc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClENTRY_v501.lib(CLEntryIcc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClENTRY_v501.lib(CLEntryProc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClENTRY_v501.lib(CLEntryProc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClENTRY_v501.lib(CLEntryPub.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClENTRY_v501.lib(CLEntryPub.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClMC_v302.lib(clss_app_mc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClMC_v302.lib(clss_app_mc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClMC_v302.lib(clss_elements_mc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClMC_v302.lib(clss_elements_mc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClMC_v302.lib(clss_icc_mc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClMC_v302.lib(clss_icc_mc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClMC_v302.lib(clss_Paypass_mc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClMC_v302.lib(clss_Paypass_mc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClMC_v302.lib(clss_pub_mc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClMC_v302.lib(clss_pub_mc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClMC_v302.lib(clss_security_mc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClMC_v302.lib(clss_security_mc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClMC_v302.lib(clss_trans_mc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClMC_v302.lib(clss_trans_mc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClMC_v302.lib(clssApi_mc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClMC_v302.lib(clssApi_mc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClWAVE_v302.lib(clss_app_wave.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClWAVE_v302.lib(clss_app_wave.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClWAVE_v302.lib(clss_elements_wave.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClWAVE_v302.lib(clss_elements_wave.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClWAVE_v302.lib(clss_icc_wave.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClWAVE_v302.lib(clss_icc_wave.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClWAVE_v302.lib(clss_pub_wave.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClWAVE_v302.lib(clss_pub_wave.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClWAVE_v302.lib(clss_security_wave.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClWAVE_v302.lib(clss_security_wave.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClWAVE_v302.lib(clss_trans_wave.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClWAVE_v302.lib(clss_trans_wave.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libClWAVE_v302.lib(clssApi_wave.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libClWAVE_v302.lib(clssApi_wave.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(app_gen.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(app_gen.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(app_main.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(app_main.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(app_msg.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(app_msg.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(app_tibc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(app_tibc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(app_util.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(app_util.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(banrisul.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(banrisul.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(cielo.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(cielo.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(file_std.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(file_std.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(man_main.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(man_main.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(man_msg.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(man_msg.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(menu.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(menu.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(multiapp.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(multiapp.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(pax_clss.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(pax_clss.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(ppc_emvs.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(ppc_emvs.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(ppc_gpin.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(ppc_gpin.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(ppc_util.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(ppc_util.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(ppcomp.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(ppcomp.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(ppcomp_pax.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(ppcomp_pax.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(ppeevc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(ppeevc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(pplib_pax.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(pplib_pax.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(ppsamadv.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(ppsamadv.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(ppsamvst.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(ppsamvst.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(pptibc1.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(pptibc1.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(pptibc3.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(pptibc3.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(pputils.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(pputils.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(redecard.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(redecard.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(shared.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(shared.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(utils.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(utils.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(paxm_bas.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(paxm_bas.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(paxm_ifd.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(paxm_ifd.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(posp_tim.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(posp_tim.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(sp30_main.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(sp30_main.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>ppcomp_lib_v110.lib(xplgutil.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“ppcomp_lib_v110.lib(xplgutil.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>SFM_EmvPC_v505.lib(appman.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“SFM_EmvPC_v505.lib(appman.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>SFM_EmvPC_v505.lib(elements.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“SFM_EmvPC_v505.lib(elements.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>SFM_EmvPC_v505.lib(icc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“SFM_EmvPC_v505.lib(icc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>SFM_EmvPC_v505.lib(pub.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“SFM_EmvPC_v505.lib(pub.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>SFM_EmvPC_v505.lib(security.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“SFM_EmvPC_v505.lib(security.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>SFM_EmvPC_v505.lib(trans.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“SFM_EmvPC_v505.lib(trans.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>SFM_EmvPC_v505.lib(TransLog.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“SFM_EmvPC_v505.lib(TransLog.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(aes_cbc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(aes_cbc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(aes_cfb.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(aes_cfb.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(aes_core.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(aes_core.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(aes_ecb.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(aes_ecb.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(aes_misc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(aes_misc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(aes_ofb.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(aes_ofb.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(des_enc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(des_enc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(set_key.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(set_key.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(rc4_enc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(rc4_enc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(rc4_skey.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(rc4_skey.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(rc4_utl.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(rc4_utl.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(md2_dgst.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(md2_dgst.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(md5_dgst.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(md5_dgst.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(sha1dgst.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(sha1dgst.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(sha256.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(sha256.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(sha512.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(sha512.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(sha_dgst.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(sha_dgst.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_add.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_add.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_asm.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_asm.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_blind.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_blind.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_ctx.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_ctx.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_div.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_div.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_exp.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_exp.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_gcd.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_gcd.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_lib.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_lib.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_mod.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_mod.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_mont.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_mont.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_mul.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_mul.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_rand.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_rand.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_recp.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_recp.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_shift.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_shift.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_sqr.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_sqr.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(bn_word.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(bn_word.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(mem.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(mem.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(mem_clr.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(mem_clr.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(o_init.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(o_init.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(err.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(err.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(digest.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(digest.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(evp_lib.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(evp_lib.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(cbc128.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(cbc128.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(cfb128.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(cfb128.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(ofb128.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(ofb128.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(md_rand.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(md_rand.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(rand_lib.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(rand_lib.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(rand_unix.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(rand_unix.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>libCrypto_V1.0.lib(hmac.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“libCrypto_V1.0.lib(hmac.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(e_aes.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(e_aes.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(e_des3.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(e_des3.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(e_rc4.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(e_rc4.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(encode.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(encode.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(evp_enc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(evp_enc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(evp_lib.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(evp_lib.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(m_md2.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(m_md2.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(m_md5.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(m_md5.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(m_sha.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(m_sha.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(m_sha1.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(m_sha1.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(mem_pool.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(mem_pool.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(obj_dat.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(obj_dat.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(oids.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(oids.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(p_lib.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(p_lib.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(p_verify.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(p_verify.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(packet_ber.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(packet_ber.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(packet_x509af.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(packet_x509af.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(packet_x509ce.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(packet_x509ce.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(packet_x509if.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(packet_x509if.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(packet_x509sat.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(packet_x509sat.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(rsa_eay.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(rsa_eay.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(rsa_lib.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(rsa_lib.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(rsa_none.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(rsa_none.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(rsa_oaep.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(rsa_oaep.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(rsa_pk1.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(rsa_pk1.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(rsa_sign.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(rsa_sign.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(rsa_ssl.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(rsa_ssl.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(ssl_cert.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(ssl_cert.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(ssl_sys.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(ssl_sys.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(t1_client.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(t1_client.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(tasn_enc.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(tasn_enc.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(tvbuff.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(tvbuff.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(value_string.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(value_string.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(x509_algid.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(x509_algid.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(x509_debug.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(x509_debug.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+     1>win_ssl.lib(x509_mem.obj) : warning LNK4099: 未找到 PDB“vc60.pdb”(使用“win_ssl.lib(x509_mem.obj)”或在“C:\PaxPayPro2010\myapp\temp\Debug\vc60.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+         temp.vcxproj -> C:\PaxPayPro2010\myapp\temp\.\Debug\temp.exe
+       FinalizeBuildStatus:
+         正在删除文件“.\Debug\temp.unsuccessfulbuild”。
+         正在对“.\Debug\temp.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“C:\PaxPayPro2010\myapp\temp\temp.vcxproj”(rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:05.72

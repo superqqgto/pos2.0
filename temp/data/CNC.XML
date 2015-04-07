@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<mensagem>
+  <header></header>
+  <dados>
+
+    <form>
+      <idtela>TelaSenhaCancelamento</idtela>
+      <descricao>Captura de Senha para habilitar Cancelamento</descricao>
+      <versao>1.00</versao>
+      <data>23/11/2008</data>
+
+      <componentes>
+        <picturebox  id="picturebox"      posx="0"   posy="0"   comprimento="100"    altura="30"   imagem="Cielo.png"     ></picturebox>
+        <label       id="SenhaLabel"      posx="160" posy="115" fontsize="12">Senha:</label>
+        <textbox     id="SenhaLojista"    posx="160" posy="140" fontsize="20" comprimento="150"  formato="7"  minlength="6" maxlength="6"  minvalue="999999"  maxvalue="999999" ></textbox>
+      </componentes>
+    </form>
+	
+    <form>
+      <idtela>TelaDataOriginal</idtela>
+      <descricao>Tela para coleta de data da transação original</descricao>
+      <versao>1.00</versao>
+      <data>23/11/2008</data>
+
+      <componentes>
+        <picturebox  id="picturebox"        posx="0"   posy="0"   comprimento="100"    altura="30"   imagem="Cielo.png"     ></picturebox>
+        <label       id="DataOriginalLabel" posx="110" posy="115" fontsize="12">Data Transação Original (DD/MM/AA):</label>
+        <textbox     id="DataOriginal"      posx="160" posy="140" fontsize="20" comprimento="150"  formato="4" formatodata="DD/MM/AA"></textbox>
+      </componentes>
+    </form>
+	
+    <form>
+      <idtela>TelaNroDocOriginal</idtela>
+      <descricao>Tela para coleta do número do documento para cancelamento</descricao>
+      <versao>1.00</versao>
+      <data>23/11/2008</data>
+
+      <componentes>
+        <picturebox  id="picturebox"        posx="0"   posy="0"   comprimento="100"    altura="30"   imagem="Cielo.png"     ></picturebox>
+        <label       id="NroDocLabel"  posx="157" posy="115" fontsize="12">Número do Documento:</label>
+        <textbox     id="DocOriginal"  posx="160" posy="140" fontsize="20" comprimento="150"  formato="1" minlength="6" maxlength="6"></textbox>
+      </componentes>
+    </form>
+	
+
+    <form>
+      <idtela>TelaValorTransacao</idtela>
+      <descricao>Tela para coleta do valor da transação</descricao>
+      <versao>1.00</versao>
+      <data>23/11/2008</data>
+
+      <componentes>
+        <picturebox  id="picturebox"        posx="0"   posy="0"   comprimento="100"    altura="30"   imagem="Cielo.png"     ></picturebox>
+        <label       id="ValorLabel"        posx="157" posy="115" fontsize="12">Valor da Transação:</label>
+        <textbox     id="ValorTransacao"    posx="160" posy="140" fontsize="20" comprimento="200"  formato="2" maxlength="8" minvalue="1"></textbox>
+      </componentes>
+    </form>
+
+	
+  </dados>
+</mensagem>
+
+
+

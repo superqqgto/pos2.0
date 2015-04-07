@@ -1,0 +1,7 @@
+[POS]
+COM = 4
+Baudrate = 6
+[APP1]
+App= C:\PAXPAY~1\myapp\pax_me\obj_d210\pax_me(v1.17).bin
+[APP2]
+App= C:\PAXPAY~1\PosType\D210\simulator_d210.bin

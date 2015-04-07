@@ -1,0 +1,159 @@
+﻿生成启动时间为 2015-02-12 17:07:00。
+     1>项目“C:\PaxPayPro2010\myapp\pax_me\pax_me.vcxproj”在节点 2 上(rebuild 个目标)。
+     1>_PrepareForClean:
+         正在删除文件“.\Debug\pax_me.lastbuildstate”。
+       InitializeBuildStatus:
+         正在对“.\Debug\pax_me.unsuccessfulbuild”执行 Touch 任务。
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I. /I"C:\PAXPAY~1\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _MBCS /X /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo".\Debug/" /Fd".\Debug/vc100.pdb" /Gd /TC /analyze- /errorReport:prompt appLib.c FileOper.c lng.c Logo.c main.c setup.c sslcomm.c SxxCom.c TranProc.c util.c Vtef.c Wifi.c xmlParser.c xmlProc.c
+         xmlProc.c
+     1>c:\paxpaypro2010\myapp\pax_me\xmlproc.h(10): error C2085: “FlagProc”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\xmlproc.h(11): error C2085: “FormProc”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\xmlproc.h(12): error C2085: “put_long”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\xmlproc.h(13): error C2085: “GetXmlEleVal”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\xmlproc.h(14): error C2085: “StatusProc”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\xmlproc.h(15): error C2085: “XML_GetAttr”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\xmlproc.h(16): error C2085: “PPCompProc”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\xmlproc.h(17): error C2085: “TelablocanteProc”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\xmlproc.h(18): error C2085: “ProcXMLPage”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(140): error C2085: “MenuFunc”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(144): error C2061: 语法错误: 标识符“MenuFunc”
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(145): error C2059: 语法错误:“}”
+     1>c:\paxpaypro2010\myapp\pax_me\xmlproc.c(20): error C2086: “char gl_szMensagem[]”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\global.h(23) : 参见“gl_szMensagem”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\xmlproc.c(281): warning C4013: “FormProc”未定义；假设外部返回 int
+     1>c:\paxpaypro2010\myapp\pax_me\xmlproc.c(281): warning C4047: “=”:“char *”与“int”的间接级别不同
+     1>c:\paxpaypro2010\myapp\pax_me\xmlproc.c(294): warning C4047: “=”:“char *”与“int”的间接级别不同
+     1>c:\paxpaypro2010\myapp\pax_me\xmlproc.c(1254): error C2040: “FormProc”:“char *(char *,char *)”与“int ()”的间接寻址级别不同
+         xmlParser.c
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(140): error C2085: “MenuFunc”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(144): error C2061: 语法错误: 标识符“MenuFunc”
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(145): error C2059: 语法错误:“}”
+     1>c:\paxpaypro2010\myapp\pax_me\xmlparser.c(9): error C2371: “glSetFormFlag”: 重定义；不同的基类型
+                 c:\paxpaypro2010\myapp\pax_me\xmlparser.h(140) : 参见“glSetFormFlag”的声明
+         Wifi.c
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(140): error C2085: “MenuFunc”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(144): error C2061: 语法错误: 标识符“MenuFunc”
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(145): error C2059: 语法错误:“}”
+     1>c:\paxpaypro2010\myapp\pax_me\wifi.c(19): error C2086: “int wnet_socket_id”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\wifi.h(31) : 参见“wnet_socket_id”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\wifi.c(20): error C2086: “int server_socket_id”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\wifi.h(32) : 参见“server_socket_id”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\wifi.c(21): error C2086: “int accept_socket_id”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\wifi.h(33) : 参见“accept_socket_id”的声明
+         Vtef.c
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(140): error C2085: “MenuFunc”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(144): error C2061: 语法错误: 标识符“MenuFunc”
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(145): error C2059: 语法错误:“}”
+     1>c:\paxpaypro2010\myapp\pax_me\vtef.c(18): error C2086: “unsigned char g_bAbort”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\vtef.h(12) : 参见“g_bAbort”的声明
+         util.c
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(140): error C2085: “MenuFunc”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(144): error C2061: 语法错误: 标识符“MenuFunc”
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(145): error C2059: 语法错误:“}”
+     1>c:\paxpaypro2010\myapp\pax_me\util.c(13): error C2086: “COMM_DATA glSendData”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\util.h(256) : 参见“glSendData”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\util.c(13): error C2086: “COMM_DATA glRecvData”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\util.h(256) : 参见“glRecvData”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\util.c(14): error C2086: “MSG_DATA glMsgData”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\util.h(257) : 参见“glMsgData”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\util.c(15): error C2086: “SYS_PROC_INFO glProcInfo”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\util.h(258) : 参见“glProcInfo”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\util.c(16): error C2086: “SYSTEM_CTRL glSysCtrl”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\util.h(259) : 参见“glSysCtrl”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\util.c(17): error C2086: “ST_INTPOS_INFO gstIntpos”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\util.h(267) : 参见“gstIntpos”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\util.c(18): error C2086: “PP_COMP glPPComp[32]”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\util.h(260) : 参见“glPPComp”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\util.c(20): error C2086: “int glPPCompIdx”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\util.h(261) : 参见“glPPCompIdx”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\util.c(21): error C2086: “unsigned long glSeqNo”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\util.h(262) : 参见“glSeqNo”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\util.c(22): error C2086: “unsigned char glszMessageType[32]”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\util.h(263) : 参见“glszMessageType”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\util.c(23): error C2086: “unsigned char glszDeDadosDestino[16]”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\util.h(264) : 参见“glszDeDadosDestino”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\util.c(24): error C2086: “unsigned char glszProcessorede[16]”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\util.h(265) : 参见“glszProcessorede”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\util.c(25): error C2086: “unsigned char glszDeDadosrede[16]”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\util.h(266) : 参见“glszDeDadosrede”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\util.c(26): error C2086: “unsigned char glCommMode”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\util.h(269) : 参见“glCommMode”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\util.c(27): error C2086: “unsigned char glConnectFlag”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\util.h(270) : 参见“glConnectFlag”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\util.c(28): error C2086: “unsigned char glStartServer”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\util.h(271) : 参见“glStartServer”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\util.c(29): error C2086: “unsigned char glAcceptClient”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\util.h(272) : 参见“glAcceptClient”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\util.c(31): error C2086: “unsigned char glActivate”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\util.h(273) : 参见“glActivate”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\util.c(797): warning C4244: “函数”: 从“unsigned long”转换到“unsigned short”，可能丢失数据
+         TranProc.c
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(140): error C2085: “MenuFunc”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(144): error C2061: 语法错误: 标识符“MenuFunc”
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(145): error C2059: 语法错误:“}”
+     1>c:\paxpaypro2010\myapp\pax_me\tranproc.c(28): error C2086: “char glTimeStamp[12]”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\tranproc.h(29) : 参见“glTimeStamp”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\tranproc.c(1001): error C2084: 函数“int ConnectTest(void)”已有主体
+                 c:\paxpaypro2010\myapp\pax_me\util.h(311) : 参见“ConnectTest”的前一个定义
+         SxxCom.c
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(49): error C2085: “SxxTcpTxd”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(64): error C2085: “SxxTcpRxd”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(75): error C2085: “SxxTcpOnHook”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(88): error C2085: “SxxDhcpStart”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(90): error C2085: “SxxTcpConnect”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(93): error C2085: “Dns_Resolve”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(95): error C2085: “SXXWlInit”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(96): error C2085: “SXXWlDial”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(97): error C2085: “SXXWlSend”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(98): error C2085: “SXXWlRecv”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(99): error C2085: “SXXWlCloseTcp”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(100): error C2085: “SXXWlClosePPP”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(140): error C2085: “MenuFunc”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(144): error C2061: 语法错误: 标识符“MenuFunc”
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(145): error C2059: 语法错误:“}”
+         sslcomm.c
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(140): error C2085: “MenuFunc”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(144): error C2061: 语法错误: 标识符“MenuFunc”
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(145): error C2059: 语法错误:“}”
+         setup.c
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(140): error C2085: “MenuFunc”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(144): error C2061: 语法错误: 标识符“MenuFunc”
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(145): error C2059: 语法错误:“}”
+     1>c:\paxpaypro2010\myapp\pax_me\setup.c(15): error C2086: “unsigned char glConfiged”: 重定义
+                 c:\paxpaypro2010\myapp\pax_me\setup.h(27) : 参见“glConfiged”的声明
+         main.c
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(49): error C2085: “SxxTcpTxd”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(64): error C2085: “SxxTcpRxd”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(75): error C2085: “SxxTcpOnHook”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(88): error C2085: “SxxDhcpStart”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(90): error C2085: “SxxTcpConnect”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(93): error C2085: “Dns_Resolve”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(95): error C2085: “SXXWlInit”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(96): error C2085: “SXXWlDial”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(97): error C2085: “SXXWlSend”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(98): error C2085: “SXXWlRecv”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(99): error C2085: “SXXWlCloseTcp”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\sxxcom.h(100): error C2085: “SXXWlClosePPP”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(140): error C2085: “MenuFunc”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(144): error C2061: 语法错误: 标识符“MenuFunc”
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(145): error C2059: 语法错误:“}”
+     1>c:\paxpaypro2010\myapp\pax_me\main.c(38): error C2086: “const APPINFO AppInfo”: 重定义
+                 c:\paxpaypro2010\include\posapi.h(1295) : 参见“AppInfo”的声明
+     1>c:\paxpaypro2010\myapp\pax_me\main.c(224): warning C4013: “SXXWlInit”未定义；假设外部返回 int
+         Logo.c
+         lng.c
+         FileOper.c
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(140): error C2085: “MenuFunc”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(144): error C2061: 语法错误: 标识符“MenuFunc”
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(145): error C2059: 语法错误:“}”
+         appLib.c
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(140): error C2085: “MenuFunc”: 不在形参表中
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(144): error C2061: 语法错误: 标识符“MenuFunc”
+     1>c:\paxpaypro2010\myapp\pax_me\applib.h(145): error C2059: 语法错误:“}”
+         正在生成代码...
+     1>已完成生成项目“C:\PaxPayPro2010\myapp\pax_me\pax_me.vcxproj”(rebuild 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.55

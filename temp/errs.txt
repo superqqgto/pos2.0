@@ -1,0 +1,32 @@
+Logo.c:583:3: warning: no newline at end of file
+Logo.h:4: warning: array 'sCielo_PB_Logo' assumed to have one element
+Logo.h:4: warning: array 'sCielo_PB_Logo' assumed to have one element
+Logo.h:4: warning: array 'sCielo_PB_Logo' assumed to have one element
+Logo.h:4: warning: array 'sCielo_PB_Logo' assumed to have one element
+util.c:35: warning: initialization from incompatible pointer type
+util.c:36: warning: initialization from incompatible pointer type
+util.c:37: warning: initialization from incompatible pointer type
+util.c:38: warning: initialization from incompatible pointer type
+util.c:39: warning: initialization from incompatible pointer type
+util.c:40: warning: initialization from incompatible pointer type
+util.c:42: warning: initialization from incompatible pointer type
+util.c:43: warning: initialization from incompatible pointer type
+util.c:44: warning: initialization from incompatible pointer type
+util.c:45: warning: initialization from incompatible pointer type
+util.c:46: warning: initialization from incompatible pointer type
+util.c:47: warning: initialization from incompatible pointer type
+util.c:48: warning: initialization from incompatible pointer type
+util.c:49: warning: initialization from incompatible pointer type
+util.c:50: warning: initialization from incompatible pointer type
+util.c:51: warning: initialization from incompatible pointer type
+util.c:53: warning: initialization from incompatible pointer type
+util.c:54: warning: initialization from incompatible pointer type
+util.c:55: warning: initialization from incompatible pointer type
+util.c:56: warning: initialization from incompatible pointer type
+util.c:57: warning: initialization from incompatible pointer type
+Logo.h:4: warning: array 'sCielo_PB_Logo' assumed to have one element
+Logo.h:4: warning: array 'sCielo_PB_Logo' assumed to have one element
+Logo.h:4: warning: array 'sCielo_PB_Logo' assumed to have one element
+Logo.h:4: warning: array 'sCielo_PB_Logo' assumed to have one element
+Logo.h:4: warning: array 'sCielo_PB_Logo' assumed to have one element
+rwx segment 11000000:11134660 -> bin 11000000:11134660 [0123]
